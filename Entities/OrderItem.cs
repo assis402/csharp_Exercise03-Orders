@@ -16,10 +16,11 @@ namespace csharp_Exercise03_Orders.Entities
 
         }
 
-        public OrderItem(int quantify, double price)
+        public OrderItem(int quantify, double price, Product product)
         {
             Quantify = quantify;
             Price = price;
+            Product = product;
         }
 
         public double SubTotal()
@@ -32,7 +33,7 @@ namespace csharp_Exercise03_Orders.Entities
             return Product.Name
                 + ", $" + Price.ToString("F2", CultureInfo.InvariantCulture)
                 + ", Quantify: " + Quantify
-                + ", Subtotal:" + SubTotal().ToString("F2", CultureInfo.InvariantCulture);
+                + ", Subtotal: " + SubTotal().ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

@@ -18,10 +18,11 @@ namespace csharp_Exercise03_Orders.Entities
 
         }
 
-        public Order(DateTime moment, OrderStatus status)
+        public Order(DateTime moment, OrderStatus status, Client cliente)
         {
             Moment = moment;
             Status = status;
+            Client = cliente;
         }
 
         public void AddItem(OrderItem item)
@@ -50,7 +51,7 @@ namespace csharp_Exercise03_Orders.Entities
             sb.AppendLine("ORDER SUMMARY: ");
             sb.AppendLine("Order moment: " + Moment.ToString("dd/MM/yyyy HH:mm:ss"));
             sb.AppendLine("Order status: " + Status);
-            sb.AppendLine("Client: " + Client);
+            sb.AppendLine("Client: " + Client.Name);
 
             foreach (OrderItem o in Items)
             {
